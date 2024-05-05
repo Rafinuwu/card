@@ -7,12 +7,11 @@ let isOpen = false;
 envelope.addEventListener('click', () => {
     if (isOpen) {
         envelope.style.display = 'none'; // Hide envelope when opened
-        content.style.display = 'none';
         isOpen = false;
     } else {
         envelope.style.display = 'none';
-        image.style.animation = 'flyIn 1s ease forwards'; // Add flyIn animation
         content.style.display = 'block';
+        image.style.animation = 'flyIn 1s ease forwards'; // Add flyIn animation
         isOpen = true;
     }
 });
