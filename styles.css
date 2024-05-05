@@ -2,10 +2,11 @@
     position: relative;
     width: 200px;
     height: 150px;
-    background-color: #f0f0f0;
-    border: 2px solid #333;
+    background-color: #fff;
+    border: 4px solid #f44336;
     border-radius: 10px;
     margin: 100px auto;
+    overflow: hidden;
 }
 
 .flap {
@@ -14,14 +15,19 @@
     left: 50%;
     width: 50px;
     height: 20px;
-    background-color: #f0f0f0;
-    border: 2px solid #333;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    background-color: #fff;
+    border-top: 4px solid #f44336;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
 }
 
@@ -29,4 +35,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: flyOut 1s ease forwards;
+}
+
+@keyframes flyOut {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    50% { transform: translate(-50%, -50%) scale(1.5); }
+    100% { transform: translate(-50%, -50%) scale(1); }
 }
