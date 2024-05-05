@@ -6,7 +6,7 @@ let isOpen = false;
 
 envelope.addEventListener('click', () => {
     if (isOpen) {
-        content.style.display = 'none';
+        envelope.style.display = 'none'; // Hide envelope when opened
         isOpen = false;
     } else {
         // Change the image source to the path of your image file
